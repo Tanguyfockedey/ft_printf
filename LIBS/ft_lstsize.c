@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 15:08:48 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/17 15:08:48 by tfockede         ###   ########.fr       */
+/*   Created: 2022/01/24 14:16:14 by tfockede          #+#    #+#             */
+/*   Updated: 2022/01/24 14:16:14 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "SRCS/ft_printf.h"
+/*
+	Counts the number of elements in a list.
+*/
 
-int	main(void)
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
 {
+	int	i;
 
-
-	return (0);
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 15:08:48 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/17 15:08:48 by tfockede         ###   ########.fr       */
+/*   Created: 2022/01/05 15:15:08 by tfockede          #+#    #+#             */
+/*   Updated: 2022/01/05 15:15:08 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "SRCS/ft_printf.h"
+/*
+	Returns true (1) if c is an alphanumeric character (a letter or number).
+*/
 
-int	main(void)
+int	ft_isalnum(int c)
 {
-
-
+	if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z')
+		|| (c >= 'a' && c <= 'z'))
+		return (1);
 	return (0);
 }

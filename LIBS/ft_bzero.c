@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 15:08:48 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/17 15:08:48 by tfockede         ###   ########.fr       */
+/*   Created: 2022/01/06 17:05:03 by tfockede          #+#    #+#             */
+/*   Updated: 2022/01/06 17:05:03 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "SRCS/ft_printf.h"
+/*
+	This function copies the value "0" into	each of the first size bytes of the 
+	object beginning at block.
+*/
 
-int	main(void)
+#include "libft.h"
+
+void	ft_bzero(void *block, size_t size)
 {
+	char	*ptr;
 
-
-	return (0);
+	ptr = (char *)block;
+	while (size-- > 0)
+		*ptr++ = 0;
 }

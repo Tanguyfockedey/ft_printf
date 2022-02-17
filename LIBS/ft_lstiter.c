@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 15:08:48 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/17 15:08:48 by tfockede         ###   ########.fr       */
+/*   Created: 2022/01/25 16:58:21 by tfockede          #+#    #+#             */
+/*   Updated: 2022/01/25 16:58:21 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "SRCS/ft_printf.h"
+/*
+	Iterates the list ’lst’ and applies the function ’f’ to the content of 
+	each element.
+*/
 
-int	main(void)
+#include "libft.h"
+
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-
-
-	return (0);
+	while (lst)
+	{
+		(*f)(lst->content);
+		lst = lst->next;
+	}
 }

@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 15:08:48 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/17 15:08:48 by tfockede         ###   ########.fr       */
+/*   Created: 2022/01/05 15:46:39 by tfockede          #+#    #+#             */
+/*   Updated: 2022/01/05 15:46:39 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "SRCS/ft_printf.h"
+/*
+	Returns true (1) if c is a printing character. Printing characters include 
+	all the graphic characters, plus the space (‘ ’) character.
+*/
 
-int	main(void)
+int	ft_isprint(int c)
 {
-
-
+	if (c >= ' ' && c <= '~')
+		return (1);
 	return (0);
 }

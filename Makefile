@@ -13,7 +13,6 @@
 NAME	= libftprintf.a
 FLAGS	= -Wall -Wextra -Werror
 FILES	=	ft_printf.c \
-			get_next_line_utils.c
 
 B_FILES =	
 
@@ -24,17 +23,20 @@ B_OBJ	= $(B_FILES:.c=.o)
 %.o: %.c
 	@ cc $(FLAGS) -c $< -o $@
 
-all: $(NAME)
-
 re: fclean all
 
-$(NAME): $(OBJ)
+all: $(NAME)
+
+$(NAME): libft $(OBJ)
 	@ ar -rc $(NAME) $(OBJ)
 	@ echo create all
 
 bonus: $(B_OBJ)
 	@ ar -rc $(NAME) $(B_OBJ)
 	@ echo create bonus
+
+libft: 
+	@ $(MAKE) -C LIBS
 
 clean:
 	@ rm -f $(OBJ) $(B_OBJ)
@@ -44,7 +46,7 @@ fclean: clean
 	@ rm -f $(NAME)
 	@ echo delete $(NAME)
 
-main: fclean bonus
+main: fclean all
 	cc main.c -fsanitize=address -g3 $(FLAGS) $(NAME)
 	@ ./a.out
 #	@ -rm -f a.out
