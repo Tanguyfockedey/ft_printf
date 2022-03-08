@@ -12,7 +12,7 @@
 
 NAME	= libftprintf.a
 FLAGS	= -Wall -Wextra -Werror
-FILES	=	ft_printf.c \
+FILES	=	SRCS/ft_printf.c \
 
 B_FILES =	
 

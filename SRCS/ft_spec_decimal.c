@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_spec_decimal.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 15:08:48 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/17 15:08:48 by tfockede         ###   ########.fr       */
+/*   Created: 2022/03/08 17:43:27 by tfockede          #+#    #+#             */
+/*   Updated: 2022/03/08 17:43:27 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "SRCS/ft_printf.h"
-#include <stdio.h>
+#include "ft_printf.h"
 
-int	main(void)
+int	ft_spec_decimal(int n)
 {
-	int a = -100;
+	char	*string;
+	int		count;
 
-	printf("number is : %x\n%p\n", a, &a);
-	//ft_printf("print %d\n", 10);
-	return (0);
+	string = ft_itoa(n);
+	if (!string)
+		return (0);
+	count = ft_strlen(string);
+	ft_putstr_fd(string, 1);
+	free(string);
+	return (count);
 }

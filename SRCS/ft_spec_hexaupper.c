@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_spec_hexaupper.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 15:08:48 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/17 15:08:48 by tfockede         ###   ########.fr       */
+/*   Created: 2022/03/08 19:05:25 by tfockede          #+#    #+#             */
+/*   Updated: 2022/03/08 19:05:25 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "SRCS/ft_printf.h"
-#include <stdio.h>
+#include "ft_printf.h"
 
-int	main(void)
+int	ft_spec_hexaupper(int n)
 {
-	int a = -100;
+	int	count;
 
-	printf("number is : %x\n%p\n", a, &a);
-	//ft_printf("print %d\n", 10);
-	return (0);
+	count = 2;
+	ft_putstr_fd("0X", 1);
+	ft_putnbr_base(n, "0123456789ABCDEF");
+	return (count); //still missing counts
 }
