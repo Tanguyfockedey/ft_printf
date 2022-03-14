@@ -23,9 +23,10 @@ int	ft_spec_string(char *string);
 int	ft_spec_pointer(void *p);
 int	ft_spec_decimal(int n);
 int	ft_spec_unsigned(unsigned int un);
-int	ft_spec_hexalower(int n);
-int	ft_spec_hexaupper(int n);
-void	ft_putnbr_base(int nb, char *base);
+int	ft_spec_hexalower(unsigned int un);
+int	ft_spec_hexaupper(unsigned int un);
+int	ft_putunbr_base(unsigned int nb, char *base);
+
 
 
 #endif

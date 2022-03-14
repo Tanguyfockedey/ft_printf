@@ -65,7 +65,7 @@ B_OBJ	= $(B_FILES:.c=.o)
 	@ gcc $(FLAGS) -c $< -o $@
 	@ printf "."
 
-re: fclean bonus
+re: bonus
 
 all: $(NAME)
 

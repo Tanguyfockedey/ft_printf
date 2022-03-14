@@ -13,6 +13,14 @@
 NAME	= libftprintf.a
 FLAGS	= -Wall -Wextra -Werror
 FILES	=	SRCS/ft_printf.c \
+			SRCS/ft_putunbr_base.c \
+			SRCS/ft_spec_char.c \
+			SRCS/ft_spec_decimal.c \
+			SRCS/ft_spec_hexalower.c \
+			SRCS/ft_spec_hexaupper.c \
+			SRCS/ft_spec_pointer.c \
+			SRCS/ft_spec_string.c \
+			SRCS/ft_spec_unsigned.c
 
 B_FILES =	
 
@@ -21,7 +29,7 @@ OBJ		= $(FILES:.c=.o)
 B_OBJ	= $(B_FILES:.c=.o)
 
 %.o: %.c
-	@ cc $(FLAGS) -c $< -o $@
+	cc $(FLAGS) -c $< -o $@
 
 re: fclean all
 
@@ -46,8 +54,8 @@ fclean: clean
 	@ rm -f $(NAME)
 	@ echo delete $(NAME)
 
-main: fclean all
-	cc main.c -fsanitize=address -g3 $(FLAGS) $(NAME)
+main: all
+	cc main.c -fsanitize=address -g3 $(FLAGS) $(NAME) LIBS/libft.a
 	@ ./a.out
 #	@ -rm -f a.out
 

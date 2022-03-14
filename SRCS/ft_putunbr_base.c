@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putunbr_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 /*
-	Converts the given decimal number to different base and displays it on the
-	standard output.
+	Converts the given unsigned decimal number to different base and displays 
+	it on the standard output.
 */
 
 #include <unistd.h>
@@ -58,25 +58,17 @@ static void	ft_basechange(unsigned int unb, char *base,
 		unb %= baselength;
 	}
 	ft_putchar(base[unb]);
-	*p_count++;
+	*p_count += 1;
 }
 
-int	ft_putnbr_base(int nb, char *base)
+int	ft_putunbr_base(unsigned int unb, char *base)
 {
 	unsigned int	baselength;
-	unsigned int	unb;
 	int				count;
 
 	count = 0;
 	if (ft_checkbase(base, &baselength) == 0)
-		return ;
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		unb = -nb;
-		count++;
-	}
-	else
-		unb = nb;
+		return (count);
 	ft_basechange(unb, base, baselength, &count);
+	return (count);
 }

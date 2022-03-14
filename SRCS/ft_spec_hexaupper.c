@@ -12,12 +12,10 @@
 
 #include "ft_printf.h"
 
-int	ft_spec_hexaupper(int n)
+int	ft_spec_hexaupper(unsigned int un)
 {
 	int	count;
 
-	count = 2;
-	ft_putstr_fd("0X", 1);
-	ft_putnbr_base(n, "0123456789ABCDEF");
-	return (count); //still missing counts
+	count = ft_putunbr_base(un, "0123456789ABCDEF");
+	return (count);
 }

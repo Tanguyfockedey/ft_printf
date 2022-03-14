@@ -12,12 +12,10 @@
 
 #include "ft_printf.h"
 
-int	ft_spec_hexalower(int n)
+int	ft_spec_hexalower(unsigned int un)
 {
 	int	count;
 
-	count = 2;
-	ft_putstr_fd("0x", 1);
-	ft_putnbr_base(n, "0123456789abcdef");
-	return (count); //still missing counts
+	count = ft_putunbr_base(un, "0123456789abcdef");
+	return (count);
 }

@@ -14,14 +14,8 @@
 
 int	ft_spec_unsigned(unsigned int un)
 {
-	char	*string;
-	int		count;
+	int	count;
 
-	string = ft_itoa(un); //should be unsigned int not int
-	if (!string)
-		return (0);
-	count = ft_strlen(string);
-	ft_putstr_fd(string, 1);
-	free(string);
+	count = ft_putunbr_base(un, "0123456789");
 	return (count);
 }
