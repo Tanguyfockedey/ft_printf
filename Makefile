@@ -12,21 +12,17 @@
 
 NAME	= libftprintf.a
 FLAGS	= -Wall -Wextra -Werror
-FILES	=	SRCS/ft_printf.c \
-			SRCS/ft_putunbr_base.c \
-			SRCS/ft_spec_char.c \
-			SRCS/ft_spec_decimal.c \
-			SRCS/ft_spec_hexalower.c \
-			SRCS/ft_spec_hexaupper.c \
-			SRCS/ft_spec_pointer.c \
-			SRCS/ft_spec_string.c \
-			SRCS/ft_spec_unsigned.c
-
-B_FILES =	
+FILES	=	src/ft_printf.c \
+			src/ft_putunbr_base.c \
+			src/ft_spec_char.c \
+			src/ft_spec_decimal.c \
+			src/ft_spec_hexalower.c \
+			src/ft_spec_hexaupper.c \
+			src/ft_spec_pointer.c \
+			src/ft_spec_string.c \
+			src/ft_spec_unsigned.c
 
 OBJ		= $(FILES:.c=.o)
-
-B_OBJ	= $(B_FILES:.c=.o)
 
 %.o: %.c
 	cc $(FLAGS) -c $< -o $@
@@ -35,19 +31,14 @@ re: fclean all
 
 all: $(NAME)
 
-$(NAME): libft $(OBJ)
-	@ ar -rc $(NAME) $(OBJ)
+$(NAME): $(OBJ)
+	@ $(MAKE) -C libft
+	@ mv libft/libft.a libftprintf.a
+	@ ar -r $(NAME) $(OBJ)
 	@ echo create all
 
-bonus: $(B_OBJ)
-	@ ar -rc $(NAME) $(B_OBJ)
-	@ echo create bonus
-
-libft: 
-	@ $(MAKE) -C LIBS
-
 clean:
-	@ rm -f $(OBJ) $(B_OBJ)
+	@ rm -f $(OBJ)
 	@ echo delete .o
 
 fclean: clean
@@ -55,8 +46,8 @@ fclean: clean
 	@ echo delete $(NAME)
 
 main: all
-	cc main.c -fsanitize=address -g3 $(FLAGS) $(NAME) LIBS/libft.a
+	cc main.c -fsanitize=address -g3 $(FLAGS) $(NAME)
 	@ ./a.out
-#	@ -rm -f a.out
+	@ -rm -f a.out
 
 .PHONY: all re bonus clean fclean
