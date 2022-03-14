@@ -25,20 +25,26 @@ FILES	=	src/ft_printf.c \
 OBJ		= $(FILES:.c=.o)
 
 %.o: %.c
-	cc $(FLAGS) -c $< -o $@
+	@ cc $(FLAGS) -c $< -o $@
+	@ printf "."
+
 
 re: fclean all
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): libft $(OBJ)
+	@ printf "\n"
+	@ ar -r $(NAME) $(OBJ)
+	@ echo create libftprintf.a
+
+libft: 
 	@ $(MAKE) -C libft
 	@ mv libft/libft.a libftprintf.a
-	@ ar -r $(NAME) $(OBJ)
-	@ echo create all
 
 clean:
 	@ rm -f $(OBJ)
+	@ $(MAKE) clean -C libft
 	@ echo delete .o
 
 fclean: clean
@@ -50,4 +56,4 @@ main: all
 	@ ./a.out
 	@ -rm -f a.out
 
-.PHONY: all re bonus clean fclean
+.PHONY: all re libft clean fclean

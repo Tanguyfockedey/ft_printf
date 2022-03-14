@@ -50,6 +50,6 @@ int	main(void)
 	ft_printf("\treturn: %d\n", b);
 	b = ft_printf("%s", str);
 	ft_printf("\treturn: %d\n", b);
-
+	
 	return (0);
 }
