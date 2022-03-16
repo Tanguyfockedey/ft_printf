@@ -52,7 +52,7 @@ fclean: clean
 	@ echo delete $(NAME)
 
 main: all
-	cc main.c -fsanitize=address -g3 $(FLAGS) $(NAME)
+	cc main.c -fsanitize=address -g3 $(NAME)
 	@ ./a.out
 	@ -rm -f a.out
 

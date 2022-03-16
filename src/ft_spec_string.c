@@ -20,5 +20,8 @@ int	ft_spec_string(char *string)
 		return (ft_strlen(string));
 	}
 	else 
-		return (0);
+	{
+		ft_putstr_fd("(null)", 1);
+		return (6);
+	}
 }

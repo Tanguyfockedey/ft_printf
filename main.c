@@ -34,7 +34,7 @@ int	main(void)
 	printf("\treturn: %d\n", b);
 	b = printf("u is : %u", un);
 	printf("\treturn: %d\n", b);
-	//b = printf("%s", NULL);
+	b = printf("%s", NULL);
 	printf("\treturn: %d\n", b);
 
 	ft_printf("\nft_printf\n");
