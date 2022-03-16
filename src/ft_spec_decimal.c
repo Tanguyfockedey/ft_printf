@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-static unsigned int	ft_intlen(int n)
+static int	ft_intlen(int n)
 {
-	unsigned int	intlen;
+	int				intlen;
 	unsigned int	un;
 
 	intlen = 1;
