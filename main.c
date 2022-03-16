@@ -19,24 +19,23 @@ int	main(void)
 	unsigned int un = 4294967295;
 	int *z;
 	int b;
-	//char *str = "This is a string !";
-
-	z = &b;
+	char *str = "This is a string !";
+	z = (&b);
 	
 	printf("\nPrintf\n");
 	b = printf("c is : %c", c);
 	printf("\t\treturn: %d\n", b);
 	b = printf("p is : %p", z);
 	printf("\treturn: %d\n", b);
-	b = printf("p is : %p", NULL);
+	b = printf("p is : %p", -100);
 	printf("\t\treturn: %d\n", b);
 	b = printf("X is : %X", un);
 	printf("\t\treturn: %d\n", b);
 	b = printf("x is : %x", un);
 	printf("\t\treturn: %d\n", b);
-	b = printf("u is : %u", un);
+	b = printf("u is : %u", __UINT32_MAX__);
 	printf("\treturn: %d\n", b);
-	b = printf("s is : %s", NULL);
+	b = printf("s is : %s", str);
 	printf("\t\treturn: %d\n", b);
 
 	ft_printf("\nft_printf\n");
@@ -44,16 +43,17 @@ int	main(void)
 	ft_printf("\t\treturn: %d\n", b);
 	b = ft_printf("p is : %p", z);
 	ft_printf("\treturn: %d\n", b);
-	b = ft_printf("p is : %p", NULL);
+	b = ft_printf("p is : %p", -100);
 	ft_printf("\t\treturn: %d\n", b);
 	b = ft_printf("X is : %X", un);
 	ft_printf("\t\treturn: %d\n", b);
 	b = ft_printf("x is : %x", un);
 	ft_printf("\t\treturn: %d\n", b);
-	b = ft_printf("u is : %u", un);
+	b = ft_printf("u is : %u", __UINT32_MAX__);
 	ft_printf("\treturn: %d\n", b);
-	b = ft_printf("s is : %s", NULL);
+	b = ft_printf("s is : %s", str);
 	ft_printf("\t\treturn: %d\n", b);
 	
+	printf("\n\nsizeof : %ld\n", sizeof(void *));
 	return (0);
 }
