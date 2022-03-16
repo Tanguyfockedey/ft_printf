@@ -14,14 +14,14 @@
 
 int	ft_spec_decimal(int n)
 {
+	char	*string;
 	int		count;
 
-	ft_putnbr_fd(n, 1);
-	count = 1;
-	while(n)
-	{
-		n /= 10;
-		count++;
-	} 
+	string = ft_itoa(n);
+	if (!string)
+		return (0);
+	count = ft_strlen(string);
+	ft_putstr_fd(string, 1);
+	free(string);
 	return (count);
 }
