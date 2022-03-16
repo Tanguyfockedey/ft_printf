@@ -19,7 +19,7 @@ int	main(void)
 	unsigned int un = 4294967295;
 	int *z;
 	int b;
-	char *str = "This is a string !";
+	//char *str = "This is a string !";
 
 	z = &b;
 	
@@ -34,7 +34,7 @@ int	main(void)
 	printf("\treturn: %d\n", b);
 	b = printf("u is : %u", un);
 	printf("\treturn: %d\n", b);
-	b = printf("%s", str);
+	//b = printf("%s", NULL);
 	printf("\treturn: %d\n", b);
 
 	ft_printf("\nft_printf\n");
@@ -48,7 +48,7 @@ int	main(void)
 	ft_printf("\treturn: %d\n", b);
 	b = ft_printf("u is : %u", un);
 	ft_printf("\treturn: %d\n", b);
-	b = ft_printf("%s", str);
+	b = ft_printf("%s", NULL);
 	ft_printf("\treturn: %d\n", b);
 	
 	return (0);

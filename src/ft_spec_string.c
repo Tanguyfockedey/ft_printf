@@ -14,6 +14,11 @@
 
 int	ft_spec_string(char *string)
 {
-	ft_putstr_fd(string, 1);
-	return (ft_strlen(string));
+	if (string)
+	{
+		ft_putstr_fd(string, 1);
+		return (ft_strlen(string));
+	}
+	else 
+		return (0);
 }
