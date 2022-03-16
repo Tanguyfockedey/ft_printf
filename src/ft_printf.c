@@ -27,7 +27,7 @@ static int	ft_specifier(char c, int count, va_list args)
 	else if (c == 's')
 		count += ft_spec_string(va_arg(args, char *));
 	else if (c == 'p')
-		count += ft_spec_pointer(va_arg(args,void *));
+		count += ft_spec_pointer(va_arg(args, void *));
 	else if (c == 'd' || c == 'i')
 		count += ft_spec_decimal(va_arg(args, int));
 	else if (c == 'u')

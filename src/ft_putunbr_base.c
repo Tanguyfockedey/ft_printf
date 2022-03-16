@@ -49,19 +49,19 @@ static int	ft_checkbase(char *base, unsigned int *baselength)
 	return (!0);
 }
 
-static void	ft_basechange(unsigned long int unb, char *base, 
+static void	ft_basechange(unsigned long ul, char *base, 
 							unsigned int baselength, int *p_count)
 {
-	if (unb > baselength - 1)
+	if (ul > baselength - 1)
 	{
-		ft_basechange(unb / baselength, base, baselength, p_count);
-		unb %= baselength;
+		ft_basechange(ul / baselength, base, baselength, p_count);
+		ul %= baselength;
 	}
-	ft_putchar(base[unb]);
+	ft_putchar(base[ul]);
 	*p_count += 1;
 }
 
-int	ft_putunbr_base(unsigned long int unb, char *base)
+int	ft_putunbr_base(unsigned long ul, char *base)
 {
 	unsigned int	baselength;
 	int				count;
@@ -69,6 +69,6 @@ int	ft_putunbr_base(unsigned long int unb, char *base)
 	count = 0;
 	if (ft_checkbase(base, &baselength) == 0)
 		return (count);
-	ft_basechange(unb, base, baselength, &count);
+	ft_basechange(ul, base, baselength, &count);
 	return (count);
 }
