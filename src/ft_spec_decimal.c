@@ -12,16 +12,28 @@
 
 #include "ft_printf.h"
 
+static unsigned int	ft_intlen(int n)
+{
+	unsigned int	intlen;
+	unsigned int	un;
+
+	intlen = 1;
+	un = n;
+	if (n < 0)
+	{
+		un = -n;
+		intlen++;
+	}
+	while (un > 9)
+	{
+		un /= 10;
+		intlen++;
+	}
+	return (intlen);
+}
+
 int	ft_spec_decimal(int n)
 {
-	char	*string;
-	int		count;
-
-	string = ft_itoa(n);
-	if (!string)
-		return (0);
-	count = ft_strlen(string);
-	ft_putstr_fd(string, 1);
-	free(string);
-	return (count);
+	ft_putnbr_fd(n, 1);
+	return (ft_intlen(n));
 }
