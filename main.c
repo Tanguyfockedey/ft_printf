@@ -36,8 +36,8 @@ int	main(void)
 	printf("\t\treturn: %d\n", b);
 	b = printf("u is : %u", un);
 	printf("\treturn: %d\n", b);
-	b = printf("%s", NULL);
-	printf("\t\t\treturn: %d\n", b);
+	b = printf("s is : %s", NULL);
+	printf("\t\treturn: %d\n", b);
 
 	ft_printf("\nft_printf\n");
 	b = ft_printf("c is : %c", c);
@@ -52,8 +52,8 @@ int	main(void)
 	ft_printf("\t\treturn: %d\n", b);
 	b = ft_printf("u is : %u", un);
 	ft_printf("\treturn: %d\n", b);
-	b = ft_printf("%s", NULL);
-	ft_printf("\t\t\treturn: %d\n", b);
+	b = ft_printf("s is : %s", NULL);
+	ft_printf("\t\treturn: %d\n", b);
 	
 	return (0);
 }
