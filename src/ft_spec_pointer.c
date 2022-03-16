@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_spec_pointer(void * p)
+int	ft_spec_pointer(void *p)
 {
 	int counter;
 

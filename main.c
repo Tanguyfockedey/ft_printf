@@ -27,7 +27,7 @@ int	main(void)
 	printf("\t\treturn: %d\n", b);
 	b = printf("p is : %p", z);
 	printf("\treturn: %d\n", b);
-	b = printf("p is : %p", -100);
+	b = printf("p is : %p", 0);
 	printf("\t\treturn: %d\n", b);
 	b = printf("X is : %X", un);
 	printf("\t\treturn: %d\n", b);
@@ -43,7 +43,7 @@ int	main(void)
 	ft_printf("\t\treturn: %d\n", b);
 	b = ft_printf("p is : %p", z);
 	ft_printf("\treturn: %d\n", b);
-	b = ft_printf("p is : %p", -100);
+	b = ft_printf("p is : %p", 0);
 	ft_printf("\t\treturn: %d\n", b);
 	b = ft_printf("X is : %X", un);
 	ft_printf("\t\treturn: %d\n", b);
