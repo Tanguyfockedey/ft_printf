@@ -21,7 +21,7 @@ int	ft_spec_pointer(void *p)
 	{
 		ft_putstr_fd("0x", 1);
 		counter = 2;
-		if (ull > __UINT32_MAX__)
+		if (ull >= __UINT32_MAX__)
 			counter += ft_putunbr_base(ull >> 32, "0123456789abcdef");
 		counter += ft_putunbr_base(ull, "0123456789abcdef");	
 	}
