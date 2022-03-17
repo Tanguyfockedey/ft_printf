@@ -17,7 +17,7 @@
 # include "../libft/libft.h"
 
 int	ft_printf(const char *format, ...);
-int ft_spec_char(char c);
+int	ft_spec_char(char c);
 int	ft_spec_string(char *string);
 int	ft_spec_pointer(void *p);
 int	ft_spec_decimal(int n);
@@ -25,7 +25,5 @@ int	ft_spec_unsigned(unsigned int un);
 int	ft_spec_hexalower(unsigned int un);
 int	ft_spec_hexaupper(unsigned int un);
 int	ft_putunbr_base(unsigned long ul, char *base);
-
-
 
 #endif

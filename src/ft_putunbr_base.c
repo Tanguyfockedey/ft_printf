@@ -49,7 +49,7 @@ static int	ft_checkbase(char *base, unsigned int *baselength)
 	return (!0);
 }
 
-static void	ft_basechange(unsigned long ul, char *base, 
+static void	ft_basechange(unsigned long ul, char *base,
 							unsigned int baselength, int *p_count)
 {
 	if (ul > baselength - 1)

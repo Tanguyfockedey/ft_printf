@@ -14,10 +14,10 @@
 
 int	ft_spec_pointer(void *p)
 {
-	int counter;
+	int	counter;
 
 	ft_putstr_fd("0x", 1);
 	counter = 2;
-	counter += ft_putunbr_base((unsigned long) p, "0123456789abcdef");	
+	counter += ft_putunbr_base((unsigned long) p, "0123456789abcdef");
 	return (counter);
 }

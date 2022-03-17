@@ -19,7 +19,7 @@ int	ft_spec_string(char *string)
 		ft_putstr_fd(string, 1);
 		return (ft_strlen(string));
 	}
-	else 
+	else
 	{
 		ft_putstr_fd("(null)", 1);
 		return (6);

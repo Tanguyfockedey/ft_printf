@@ -21,7 +21,6 @@
 
 static int	ft_specifier(char c, int count, va_list args)
 {
-
 	if (c == 'c')
 		count += ft_spec_char(va_arg(args, int));
 	else if (c == 's')
@@ -46,8 +45,8 @@ static int	ft_specifier(char c, int count, va_list args)
 
 static int	ft_read_format(const char *format, va_list args)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	count = 0;
 	i = -1;
@@ -69,7 +68,7 @@ static int	ft_read_format(const char *format, va_list args)
 
 int	ft_printf(const char *format, ...)
 {
-	int count;
+	int		count;
 	va_list	args;
 
 	va_start(args, format);

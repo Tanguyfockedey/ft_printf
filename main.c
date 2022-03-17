@@ -15,13 +15,15 @@
 
 int	main(void)
 {
-	char c = 'A';
-	unsigned int un = 4294967295;
-	int *z;
-	int b;
-	char *str = "This is a string !";
-	z = (&b);
-	
+	char			c;
+	unsigned int	un;
+	int				*z;
+	int				b;
+
+	z = &b;
+	un = UINT32_MAX;
+	c = 'A';
+
 	printf("\nPrintf\n");
 	b = printf("c is : %c", c);
 	printf("\t\treturn: %d\n", b);
@@ -35,7 +37,7 @@ int	main(void)
 	printf("\t\treturn: %d\n", b);
 	b = printf("u is : %u", __UINT32_MAX__);
 	printf("\treturn: %d\n", b);
-	b = printf("s is : %s", str);
+	b = printf("s is : %s", "This is a string !");
 	printf("\t\treturn: %d\n", b);
 
 	ft_printf("\nft_printf\n");
@@ -51,9 +53,9 @@ int	main(void)
 	ft_printf("\t\treturn: %d\n", b);
 	b = ft_printf("u is : %u", __UINT32_MAX__);
 	ft_printf("\treturn: %d\n", b);
-	b = ft_printf("s is : %s", str);
+	b = ft_printf("s is : %s", "This is a string !");
 	ft_printf("\t\treturn: %d\n", b);
-	
+
 	printf("\n\nsizeof : %ld\n", sizeof(void *));
 	return (0);
 }
