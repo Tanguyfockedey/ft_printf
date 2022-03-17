@@ -72,12 +72,12 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ printf "\n"
 	@ echo create mandatory
-	@ ar -rc $(NAME) $(OBJ)
+	@ ar -r $(NAME) $(OBJ)
 
 bonus: $(B_OBJ) $(OBJ)
 	@ printf "\n"
 	@ echo create libft.a mandatory + bonus
-	@ ar -rc $(NAME) $(B_OBJ) $(OBJ)
+	@ ar -r $(NAME) $(B_OBJ) $(OBJ)
 
 clean:
 	@ rm -f $(OBJ) $(B_OBJ)

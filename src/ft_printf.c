@@ -19,22 +19,25 @@
 
 #include "ft_printf.h"
 
-static int	ft_specifier(char c, int count, va_list args)
+static int	ft_specifier(char c, va_list args)
 {
+	int	count;
+
+	count = 0;
 	if (c == 'c')
-		count += ft_spec_char(va_arg(args, int));
+		count = ft_spec_char(va_arg(args, int));
 	else if (c == 's')
-		count += ft_spec_string(va_arg(args, char *));
+		count = ft_spec_string(va_arg(args, char *));
 	else if (c == 'p')
-		count += ft_spec_pointer(va_arg(args, void *));
+		count = ft_spec_pointer(va_arg(args, void *));
 	else if (c == 'd' || c == 'i')
-		count += ft_spec_decimal(va_arg(args, int));
+		count = ft_spec_decimal(va_arg(args, int));
 	else if (c == 'u')
-		count += ft_spec_unsigned(va_arg(args, unsigned int));
+		count = ft_spec_unsigned(va_arg(args, unsigned int));
 	else if (c == 'x')
-		count += ft_spec_hexalower(va_arg(args, unsigned int));
+		count = ft_spec_hexalower(va_arg(args, unsigned int));
 	else if (c == 'X')
-		count += ft_spec_hexaupper(va_arg(args, unsigned int));
+		count = ft_spec_hexaupper(va_arg(args, unsigned int));
 	else if (c == '%')
 	{
 		ft_putchar_fd(c, 1);
@@ -60,7 +63,7 @@ static int	ft_read_format(const char *format, va_list args)
 		else
 		{
 			i++;
-			count = ft_specifier(format[i], count, args);
+			count += ft_specifier(format[i], args);
 		}
 	}
 	return (count);
